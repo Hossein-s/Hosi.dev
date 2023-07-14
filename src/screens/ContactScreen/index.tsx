@@ -25,7 +25,15 @@ export function ContactScreen() {
         <a href="mailto:hossein.sadeghir@gmail.com">hossein.sadeghir@gmail.com</a>
       </Text>
 
-      <Grid gap="15px" templateAreas="'. .' 'row2 row2' 'row3 row3'" mb="50px" data-aos="zoom-out">
+      <Grid
+        gap="15px"
+        templateAreas={{
+          base: "'.' '.' 'row2' 'row3'",
+          lg: "'. .' 'row2 row2' 'row3 row3'",
+        }}
+        mb="50px"
+        data-aos="zoom-out"
+      >
         <GridItem>
           <Input
             type="text"
