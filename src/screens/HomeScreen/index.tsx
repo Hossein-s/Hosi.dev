@@ -1,8 +1,9 @@
 import { ScreenContainer } from "@/components/ScreenContainer";
 import { SectionTitle } from "@/components/SectionTitle";
 import { AppData } from "@/types/AppData";
-import { HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, HStack, Text, VStack } from "@chakra-ui/react";
 import { Home2 } from "iconsax-react";
+import Image from "next/image";
 
 export function HomeScreen({ pad, info }: { pad: number; info: AppData["basicInfo"] }) {
   return (
@@ -33,6 +34,22 @@ export function HomeScreen({ pad, info }: { pad: number; info: AppData["basicInf
           a Software Engineer
         </Text>
       </VStack>
+
+      <Flex
+        display={{ base: "flex", lg: "none" }}
+        justifyContent="center"
+        mt={6}
+        data-aos="zoom-out"
+        data-aos-delay="500"
+      >
+        <Image
+          src="/images/avatar.jpg"
+          width={200}
+          height={200}
+          alt="Hossein Sadeghi"
+          style={{ borderRadius: "16px" }}
+        />
+      </Flex>
 
       <Text
         fontSize="0.9rem"
