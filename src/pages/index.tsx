@@ -48,7 +48,7 @@ export default function Index(props: AppData) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <Box width={{ base: "100%", lg: "1050px" }} mx="auto" position="relative">
+      <Box width={{ base: "100%", lg: "1050px" }} mx="auto" position="relative" overflow="hidden">
         <ProfileBox onPadUpdate={(p) => setOffsetTop(p)} />
 
         <StickyNavbar />
