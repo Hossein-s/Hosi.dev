@@ -9,10 +9,11 @@ export function useSticky(): MutableRefObject<HTMLElement | undefined> {
       const element = elementRef.current!;
       const rect = element.getClientRects()[0];
 
-      // use gsap to animate that
-      const top = Math.round(window.innerHeight / 2 - rect.height / 2 + window.scrollY);
-
-      gsap.to(element, { top, duration: 0.1 });
+      if (rect) {
+        // use gsap to animate that
+        const top = Math.round(window.innerHeight / 2 - rect.height / 2 + window.scrollY);
+        gsap.to(element, { top, duration: 0.1 });
+      }
     }
 
     // call function for initialization

@@ -10,11 +10,17 @@ export function ExperienceScreen({ experiences }: { experiences: AppData["experi
     <ScreenContainer>
       <SectionTitle title="EXPERIENCES" Icon={Briefcase} />
 
-      <Text fontSize="4xl" color="text.accent" mt={7} mb={7} data-aos="fade-left">
+      <Text
+        fontSize={{ base: "3xl", lg: "4xl" }}
+        color="text.accent"
+        mt={7}
+        mb={7}
+        data-aos="fade-left"
+      >
         Experiences
       </Text>
 
-      <VStack alignItems="flex-start" gap={0} mb={32} data-aos="fade-left">
+      <VStack alignItems="flex-start" gap={0} mb={16} data-aos="fade-left">
         {experiences.map((experience, idx) => (
           <TimelineItem
             key={idx}

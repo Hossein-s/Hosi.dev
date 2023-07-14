@@ -8,7 +8,13 @@ export function ContactScreen() {
     <ScreenContainer mt="100px">
       <SectionTitle title="CONTACT ME" Icon={Sms} />
 
-      <Text fontSize="4xl" color="text.primary" mt={7} mb={7} data-aos="fade-left">
+      <Text
+        fontSize={{ base: "3xl", lg: "4xl" }}
+        color="text.primary"
+        mt={7}
+        mb={7}
+        data-aos="fade-left"
+      >
         Contact{" "}
         <Text as="span" color="text.accent">
           me!
@@ -19,7 +25,7 @@ export function ContactScreen() {
         <a href="mailto:hossein.sadeghir@gmail.com">hossein.sadeghir@gmail.com</a>
       </Text>
 
-      <Grid gap="15px" templateAreas="'. .' 'row2 row2' 'row3 row3'" mb="50px">
+      <Grid gap="15px" templateAreas="'. .' 'row2 row2' 'row3 row3'" mb="50px" data-aos="zoom-out">
         <GridItem>
           <Input
             type="text"

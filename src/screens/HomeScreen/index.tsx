@@ -6,18 +6,30 @@ import { Home2 } from "iconsax-react";
 
 export function HomeScreen({ pad, info }: { pad: number; info: AppData["basicInfo"] }) {
   return (
-    <ScreenContainer h="100vh" p={`${pad}px`}>
+    <ScreenContainer h={{ base: "auto", lg: "100vh" }} pt={`${pad}px`} mb={12}>
       <SectionTitle title="INTRODUCE" Icon={Home2} />
 
       <VStack alignItems="flex-start" paddingTop="20px" gap={0}>
-        <Text fontSize="5xl" color="#FFF" lineHeight={1.2} data-aos="fade-up" data-aos-delay="200">
+        <Text
+          fontSize={{ base: "3xl", lg: "5xl" }}
+          color="#FFF"
+          lineHeight={1.2}
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           Hello, I am{" "}
           <Text as="span" color="#EEFC57">
             Hossein
           </Text>
           ,
         </Text>
-        <Text fontSize="5xl" color="#FFF" lineHeight={1.2} data-aos="fade-up" data-aos-delay="400">
+        <Text
+          fontSize={{ base: "3xl", lg: "5xl" }}
+          color="#FFF"
+          lineHeight={1.2}
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           a Software Engineer
         </Text>
       </VStack>
@@ -33,26 +45,25 @@ export function HomeScreen({ pad, info }: { pad: number; info: AppData["basicInf
       </Text>
 
       <HStack
-        spacing={100}
-        justifyContent="center"
+        justifyContent="space-around"
         marginTop={10}
         data-aos="zoom-out"
         data-aos-delay="1000"
       >
         <VStack maxW="74px">
-          <Text fontSize="3.7rem" color="#EEFC57">
+          <Text fontSize={{ base: "5xl", lg: "6xl" }} color="#EEFC57">
             7+
           </Text>
-          <Text fontSize="1rem" color="#999" align="center">
+          <Text fontSize={{ base: "sm", lg: "md" }} color="#999" align="center">
             YEARS OF EXPRIENCE
           </Text>
         </VStack>
 
         <VStack maxW="74px">
-          <Text fontSize="3.7rem" color="#EEFC57">
+          <Text fontSize={{ base: "5xl", lg: "6xl" }} color="#EEFC57">
             5+
           </Text>
-          <Text fontSize="1rem" color="#999" align="center">
+          <Text fontSize={{ base: "sm", lg: "md" }} color="#999" align="center">
             PROJECTS COMPLETED
           </Text>
         </VStack>

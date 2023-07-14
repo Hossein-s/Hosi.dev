@@ -22,7 +22,7 @@ export function StickyNavbar() {
       ref={elementRef as any}
       position="absolute"
       right="10px"
-      display="inline-flex"
+      display={{ base: "none", lg: "inline-flex" }}
       padding="1.1rem 0.8rem"
       spacing={15}
       border="1px solid #666"

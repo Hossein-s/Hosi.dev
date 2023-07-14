@@ -9,7 +9,13 @@ export function SkillsScreen({ skillCategories }: { skillCategories: AppData["sk
     <ScreenContainer>
       <SectionTitle title="DIGITAL SKILLS" Icon={MainComponent} />
 
-      <Text fontSize="4xl" color="text.primary" mt={7} mb={7} data-aos="fade-left">
+      <Text
+        fontSize={{ base: "3xl", lg: "4xl" }}
+        color="text.primary"
+        mt={7}
+        mb={7}
+        data-aos="fade-left"
+      >
         Digital{" "}
         <Text as="span" color="text.accent">
           Skills

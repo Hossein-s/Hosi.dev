@@ -11,11 +11,13 @@ export function useCenter(
       const element = elementRef.current!;
       const rect = element.getClientRects()[0];
 
-      // use gsap to animate that
-      const top = Math.round(window.innerHeight / 2 - rect.height / 2 + window.scrollY);
-      element.style.top = `${top}px`;
+      if (rect) {
+        // use gsap to animate that
+        const top = Math.round(window.innerHeight / 2 - rect.height / 2 + window.scrollY);
+        element.style.top = `${top}px`;
 
-      onPadUpdate(top);
+        onPadUpdate(top);
+      }
     }
 
     // call function for initialization
