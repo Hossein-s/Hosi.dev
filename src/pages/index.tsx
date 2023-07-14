@@ -44,7 +44,7 @@ export default function Index(props: AppData) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
-        <title>Hossein's Personal Page</title>
+        <title>Hossein&apos;s Personal Page</title>
       </Head>
 
       <Box width="1050px" mx="auto" position="relative">
