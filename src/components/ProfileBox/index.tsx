@@ -9,7 +9,7 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
   return (
     <Box
       ref={elementRef as any}
-      display={{ base: "none", lg: "inline-flex" }}
+      display={{ base: "none", lg: "block" }}
       position="absolute"
       borderWidth={1}
       borderColor="stroke"
