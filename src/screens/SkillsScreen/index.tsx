@@ -1,7 +1,7 @@
 import { ScreenContainer } from "@/components/ScreenContainer";
 import { SectionTitle } from "@/components/SectionTitle";
 import { AppData } from "@/types/AppData";
-import { Box, Flex, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { MainComponent } from "iconsax-react";
 
 export function SkillsScreen({ skillCategories }: { skillCategories: AppData["skillCategories"] }) {
@@ -28,25 +28,42 @@ export function SkillsScreen({ skillCategories }: { skillCategories: AppData["sk
             <Text fontSize="xl" mb="20px" mt="40px" color="text.accent">
               {name}
             </Text>
-            <HStack gap="18px" flexWrap="wrap">
+            <Grid
+              gridTemplateColumns={{
+                base: "repeat(2, 1fr)",
+                sm: "repeat(3, 1fr)",
+                md: "repeat(4, 1fr)",
+              }}
+              gridTemplate={{ base: "repeat(4, 1fr)" }}
+              gap="18px"
+            >
               {items.map((skill, idx) => (
-                <VStack
-                  key={idx}
-                  width="134px"
-                  p="20px"
-                  border="1px solid"
-                  borderColor="stroke"
-                  borderRadius="16px"
-                >
-                  <Flex w="80px" h="80px" alignItems="center">
-                    <Image src={skill.image} w="80px" h="80px" />
-                  </Flex>
-                  <Text fontSize="md" mt="25px">
-                    {skill.name}
-                  </Text>
-                </VStack>
+                <GridItem>
+                  <VStack
+                    key={idx}
+                    height="100%"
+                    p="20px"
+                    border="1px solid"
+                    borderColor="stroke"
+                    borderRadius="16px"
+                  >
+                    <Flex w="80px" h="80px" alignItems="center">
+                      <Image src={skill.image} w="80px" h="80px" />
+                    </Flex>
+                    <Text
+                      fontSize="md"
+                      align="center"
+                      mt="25px"
+                      flexGrow="1"
+                      display="flex"
+                      alignItems="center"
+                    >
+                      {skill.name}
+                    </Text>
+                  </VStack>
+                </GridItem>
               ))}
-            </HStack>
+            </Grid>
           </Box>
         ))}
       </Box>
