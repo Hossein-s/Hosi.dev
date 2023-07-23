@@ -1,10 +1,20 @@
 import { useCenter } from "@/hooks/useCenter";
 import { Box, Flex, HStack, Icon, Link, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import { FaEnvelope, FaGithubAlt, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
+import { useMemo } from "react";
+import { FaEnvelope, FaGithubAlt, FaLinkedinIn, FaInstagram } from "react-icons/fa6";
 
 export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }) {
   const elementRef = useCenter(onPadUpdate);
+
+  const socials = useMemo(
+    () => [
+      { icon: FaLinkedinIn, link: "https://www.linkedin.com/in/hossein-sadeghiam/" },
+      { icon: FaGithubAlt, link: "https://github.com/Hossein-s" },
+      { icon: FaInstagram, link: "https://www.instagram.com/hossein.sadeghiam/" },
+    ],
+    []
+  );
 
   return (
     <Box
@@ -39,18 +49,24 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
       </Text>
 
       <HStack justifyContent="center" gap={5} marginTop={5}>
-        {[FaLinkedinIn, FaWhatsapp, FaGithubAlt].map((icon, idx) => (
-          <Flex
+        {socials.map((social, idx) => (
+          <Link
             key={idx}
             w={10}
             h={10}
+            href={social.link}
+            target="_blank"
+            display="flex"
             borderRadius="11px"
             backgroundColor="bg.secondary"
             justifyContent="center"
             alignItems="center"
+            _hover={{
+              backgroundColor: "gray.500",
+            }}
           >
-            <Icon as={icon} color="#1F1F21" width={5} height={5} />
-          </Flex>
+            <Icon as={social.icon} color="#1F1F21" width={5} height={5} />
+          </Link>
         ))}
       </HStack>
 
@@ -63,6 +79,10 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
         background="bg.yellow"
         borderRadius="12px"
         alignItems="center"
+        onClick={() => {
+          const elem = document.querySelector<HTMLElement>("#contact");
+          window.scrollTo({ top: elem!.offsetTop - 30, behavior: "smooth" });
+        }}
       >
         <Icon as={FaEnvelope} color="#1F1F21" />
         <Text fontSize="0.9rem" fontWeight="700" color="#1F1F21">
