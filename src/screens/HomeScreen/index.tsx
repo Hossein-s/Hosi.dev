@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export function HomeScreen({ pad, info }: { pad: number; info: AppData["basicInfo"] }) {
   return (
-    <ScreenContainer h={{ base: "auto", lg: "100vh" }} pt={`${pad}px`} mb={12}>
+    <ScreenContainer h={{ base: "auto", lg: "100vh" }} pt={`${pad}px`} mb={12} id="home">
       <SectionTitle title="INTRODUCE" Icon={Home2} />
 
       <VStack alignItems="flex-start" paddingTop="20px" gap={0}>

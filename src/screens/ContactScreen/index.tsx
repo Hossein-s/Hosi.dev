@@ -5,7 +5,7 @@ import { Sms } from "iconsax-react";
 
 export function ContactScreen() {
   return (
-    <ScreenContainer mt="100px">
+    <ScreenContainer mt="100px" id="contact">
       <SectionTitle title="CONTACT ME" Icon={Sms} />
 
       <Text

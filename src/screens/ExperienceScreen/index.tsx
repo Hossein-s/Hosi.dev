@@ -7,7 +7,7 @@ import { AppData } from "@/types/AppData";
 
 export function ExperienceScreen({ experiences }: { experiences: AppData["experiences"] }) {
   return (
-    <ScreenContainer>
+    <ScreenContainer id="experiences">
       <SectionTitle title="EXPERIENCES" Icon={Briefcase} />
 
       <Text

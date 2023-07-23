@@ -6,7 +6,7 @@ import { MainComponent } from "iconsax-react";
 
 export function SkillsScreen({ skillCategories }: { skillCategories: AppData["skillCategories"] }) {
   return (
-    <ScreenContainer>
+    <ScreenContainer id="skills">
       <SectionTitle title="DIGITAL SKILLS" Icon={MainComponent} />
 
       <Text
