@@ -38,7 +38,7 @@ export function SkillsScreen({ skillCategories }: { skillCategories: AppData["sk
               gap="18px"
             >
               {items.map((skill, idx) => (
-                <GridItem>
+                <GridItem key={idx}>
                   <VStack
                     key={idx}
                     height="100%"
