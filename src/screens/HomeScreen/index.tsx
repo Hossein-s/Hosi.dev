@@ -19,7 +19,7 @@ export function HomeScreen({ pad, info }: { pad: number; info: AppData["basicInf
           data-aos-delay="200"
         >
           Hello, I am{" "}
-          <Text as="span" color="#EEFC57">
+          <Text as="span" color="#EEFC57" fontWeight="bold">
             Hossein
           </Text>
           ,
