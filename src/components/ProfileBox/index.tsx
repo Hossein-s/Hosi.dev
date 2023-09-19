@@ -79,14 +79,11 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
         background="bg.yellow"
         borderRadius="12px"
         alignItems="center"
-        onClick={() => {
-          const elem = document.querySelector<HTMLElement>("#contact");
-          window.scrollTo({ top: elem!.offsetTop - 30, behavior: "smooth" });
-        }}
+        href="mailto:hossein.sadeghir@gmail.com"
       >
         <Icon as={FaEnvelope} color="#1F1F21" />
         <Text fontSize="0.9rem" fontWeight="700" color="#1F1F21">
-          HIRE ME!
+          Contact Me
         </Text>
       </Link>
     </Box>

@@ -2,7 +2,6 @@
 
 import { ProfileBox } from "@/components/ProfileBox";
 import { StickyNavbar } from "@/components/StickyNavbar";
-import { ContactScreen } from "@/screens/ContactScreen";
 import { ExperienceScreen } from "@/screens/ExperienceScreen";
 import { HomeScreen } from "@/screens/HomeScreen";
 import { SkillsScreen } from "@/screens/SkillsScreen";
@@ -48,7 +47,13 @@ export default function Index(props: AppData) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <Box width={{ base: "100%", lg: "1050px" }} mx="auto" position="relative" overflow="hidden">
+      <Box
+        width={{ base: "100%", lg: "1050px" }}
+        mx="auto"
+        pb="12"
+        position="relative"
+        overflow="hidden"
+      >
         <ProfileBox onPadUpdate={(p) => setOffsetTop(p)} />
 
         <StickyNavbar />
@@ -58,8 +63,6 @@ export default function Index(props: AppData) {
         <ExperienceScreen experiences={props.experiences} />
 
         <SkillsScreen skillCategories={props.skillCategories} />
-
-        <ContactScreen />
       </Box>
     </ChakraProvider>
   );

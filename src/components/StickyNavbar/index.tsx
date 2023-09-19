@@ -11,7 +11,6 @@ export function StickyNavbar() {
       // { title: "About", icon: PictureFrame, anchor: "#about" },
       { title: "Work Experiences", icon: Briefcase, anchor: "#experiences" },
       { title: "Skills", icon: MainComponent, anchor: "#skills" },
-      { title: "Contact", icon: Sms, anchor: "#contact" },
     ],
     []
   );
