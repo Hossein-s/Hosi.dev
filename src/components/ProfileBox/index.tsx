@@ -41,13 +41,6 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
         style={{ borderRadius: "16px" }}
       />
 
-      <Text fontSize="sm" fontWeight="400" align="center" my={3}>
-        hossein.sadeghir@gmail.com
-      </Text>
-      <Text fontSize="sm" fontWeight="400" align="center">
-        Based in Austria
-      </Text>
-
       <HStack justifyContent="center" gap={5} marginTop={5}>
         {socials.map((social, idx) => (
           <Link
@@ -79,7 +72,7 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
         background="bg.yellow"
         borderRadius="12px"
         alignItems="center"
-        href="mailto:hossein.sadeghir@gmail.com"
+        href="mailto:mail@hosi.dev"
       >
         <Icon as={FaEnvelope} color="#1F1F21" />
         <Text fontSize="0.9rem" fontWeight="700" color="#1F1F21">
