@@ -10,6 +10,7 @@ import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 
 export const theme = extendTheme({
@@ -43,9 +44,19 @@ export default function Index(props: AppData) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
-        <title>Hossein&apos;s Personal Page</title>
+        <title>Hossein Sadeghi&apos;s Personal Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0XMT1C0GLB" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-0XMT1C0GLB');
+        `}
+      </Script>
 
       <Box
         width={{ base: "100%", lg: "1050px" }}
