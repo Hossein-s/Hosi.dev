@@ -1,5 +1,6 @@
 "use client";
 
+import "@/app/globals.css";
 import { ProfileBox } from "@/components/ProfileBox";
 import { StickyNavbar } from "@/components/StickyNavbar";
 import { AppDataProvider } from "@/hooks/useAppData";
@@ -7,14 +8,13 @@ import { ExperienceScreen } from "@/screens/ExperienceScreen";
 import { HomeScreen } from "@/screens/HomeScreen";
 import { SkillsScreen } from "@/screens/SkillsScreen";
 import { AppData } from "@/types/AppData";
-import { loadStaticProps } from "@/utils/StaticPropsLoader";
+import { loadAppData } from "@/utils/AppDataLoader";
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import "@/app/globals.css";
 
 export const theme = extendTheme({
   styles: {
@@ -84,6 +84,6 @@ export default function Index(props: AppData) {
   );
 }
 
-export function getStaticProps(): AppData {
-  return loadStaticProps();
+export function getStaticProps(): { props: AppData } {
+  return { props: loadAppData() };
 }
