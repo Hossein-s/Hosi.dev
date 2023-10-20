@@ -1,4 +1,3 @@
-import { gsap } from "gsap";
 import { MutableRefObject, useEffect, useRef } from "react";
 
 export function useCenter(
@@ -12,7 +11,6 @@ export function useCenter(
       const rect = element.getClientRects()[0];
 
       if (rect) {
-        // use gsap to animate that
         const top = Math.round(window.innerHeight / 2 - rect.height / 2 + window.scrollY);
         element.style.top = `${top}px`;
 

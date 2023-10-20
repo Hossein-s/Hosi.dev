@@ -1,10 +1,10 @@
 import { ScreenContainer } from "@/components/ScreenContainer";
 import { SectionTitle } from "@/components/SectionTitle";
+import { Socials } from "@/components/Socials";
 import { useAppData } from "@/hooks/useAppData";
-import { Flex, HStack, Icon, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, HStack, Text, VStack } from "@chakra-ui/react";
 import { Home2 } from "iconsax-react";
 import Image from "next/image";
-import * as icons from "react-icons/fa6";
 
 export function HomeScreen({ pad }: { pad: number }) {
   const { description, socials } = useAppData();
@@ -64,35 +64,9 @@ export function HomeScreen({ pad }: { pad: number }) {
         {description}
       </Text>
 
-      <HStack
-        display={{ base: "flex", lg: "none" }}
-        justifyContent="center"
-        data-aos="zoom-out"
-        data-aos-delay="900"
-        gap={5}
-        marginTop={5}
-      >
-        {socials.map(({ url, icon, name }, idx) => (
-          <Link
-            key={idx}
-            title={name}
-            w={12}
-            h={12}
-            href={url}
-            target="_blank"
-            display="flex"
-            borderRadius="11px"
-            backgroundColor="bg.secondary"
-            justifyContent="center"
-            alignItems="center"
-            _hover={{
-              backgroundColor: "gray.500",
-            }}
-          >
-            <Icon as={icons[icon as keyof typeof icons]} color="#1F1F21" width={7} height={7} />
-          </Link>
-        ))}
-      </HStack>
+      <Box display={{ base: "block", lg: "none" }}>
+        <Socials items={socials} />
+      </Box>
 
       <HStack
         justifyContent="space-around"

@@ -3,6 +3,7 @@ import { useCenter } from "@/hooks/useCenter";
 import { Box, HStack, Icon, Link, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import * as icons from "react-icons/fa6";
+import { Socials } from "../Socials";
 
 export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }) {
   const elementRef = useCenter(onPadUpdate);
@@ -33,28 +34,7 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
         style={{ borderRadius: "16px" }}
       />
 
-      <HStack justifyContent="center" gap={5} marginTop={5}>
-        {socials.map(({ url, icon, name }, idx) => (
-          <Link
-            key={idx}
-            title={name}
-            w={10}
-            h={10}
-            href={url}
-            target="_blank"
-            display="flex"
-            borderRadius="11px"
-            backgroundColor="bg.secondary"
-            justifyContent="center"
-            alignItems="center"
-            _hover={{
-              backgroundColor: "gray.500",
-            }}
-          >
-            <Icon as={icons[icon as keyof typeof icons]} color="#1F1F21" width={5} height={5} />
-          </Link>
-        ))}
-      </HStack>
+      <Socials items={socials} />
 
       <Link
         display="flex"
