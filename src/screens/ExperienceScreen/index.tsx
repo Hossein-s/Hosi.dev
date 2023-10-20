@@ -1,11 +1,13 @@
 import { ScreenContainer } from "@/components/ScreenContainer";
 import { SectionTitle } from "@/components/SectionTitle";
+import { useAppData } from "@/hooks/useAppData";
 import { Text, VStack } from "@chakra-ui/react";
 import { Briefcase } from "iconsax-react";
 import { TimelineItem } from "./components/TimelineItem";
-import { AppData } from "@/types/AppData";
 
-export function ExperienceScreen({ experiences }: { experiences: AppData["experiences"] }) {
+export function ExperienceScreen() {
+  const { experiences } = useAppData();
+
   return (
     <ScreenContainer id="experiences">
       <SectionTitle title="EXPERIENCES" Icon={Briefcase} />

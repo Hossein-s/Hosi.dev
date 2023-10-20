@@ -1,11 +1,14 @@
 import { ScreenContainer } from "@/components/ScreenContainer";
 import { SectionTitle } from "@/components/SectionTitle";
-import { AppData } from "@/types/AppData";
-import { Box, Flex, HStack, Text, VStack } from "@chakra-ui/react";
+import { useAppData } from "@/hooks/useAppData";
+import { Flex, HStack, Icon, Link, Text, VStack } from "@chakra-ui/react";
 import { Home2 } from "iconsax-react";
 import Image from "next/image";
+import * as icons from "react-icons/fa6";
 
-export function HomeScreen({ pad, info }: { pad: number; info: AppData["basicInfo"] }) {
+export function HomeScreen({ pad }: { pad: number }) {
+  const { description, socials } = useAppData();
+
   return (
     <ScreenContainer h={{ base: "auto", lg: "100vh" }} pt={`${pad}px`} mb={12} id="home">
       <SectionTitle title="INTRODUCE" Icon={Home2} />
@@ -58,8 +61,38 @@ export function HomeScreen({ pad, info }: { pad: number; info: AppData["basicInf
         data-aos="zoom-out"
         data-aos-delay="800"
       >
-        {info.description}
+        {description}
       </Text>
+
+      <HStack
+        display={{ base: "flex", lg: "none" }}
+        justifyContent="center"
+        data-aos="zoom-out"
+        data-aos-delay="900"
+        gap={5}
+        marginTop={5}
+      >
+        {socials.map(({ url, icon, name }, idx) => (
+          <Link
+            key={idx}
+            title={name}
+            w={12}
+            h={12}
+            href={url}
+            target="_blank"
+            display="flex"
+            borderRadius="11px"
+            backgroundColor="bg.secondary"
+            justifyContent="center"
+            alignItems="center"
+            _hover={{
+              backgroundColor: "gray.500",
+            }}
+          >
+            <Icon as={icons[icon as keyof typeof icons]} color="#1F1F21" width={7} height={7} />
+          </Link>
+        ))}
+      </HStack>
 
       <HStack
         justifyContent="space-around"

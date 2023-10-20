@@ -1,10 +1,12 @@
 import { ScreenContainer } from "@/components/ScreenContainer";
 import { SectionTitle } from "@/components/SectionTitle";
-import { AppData } from "@/types/AppData";
-import { Box, Flex, Grid, GridItem, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { useAppData } from "@/hooks/useAppData";
+import { Box, Flex, Grid, GridItem, Image, Text, VStack } from "@chakra-ui/react";
 import { MainComponent } from "iconsax-react";
 
-export function SkillsScreen({ skillCategories }: { skillCategories: AppData["skillCategories"] }) {
+export function SkillsScreen() {
+  const { skills } = useAppData();
+
   return (
     <ScreenContainer id="skills">
       <SectionTitle title="DIGITAL SKILLS" Icon={MainComponent} />
@@ -23,10 +25,10 @@ export function SkillsScreen({ skillCategories }: { skillCategories: AppData["sk
       </Text>
 
       <Box>
-        {skillCategories.map(({ name, items }, idx) => (
+        {skills.map(({ categoryName, items }, idx) => (
           <Box key={idx} data-aos="zoom-out">
             <Text fontSize="xl" mb="20px" mt="40px" color="text.accent">
-              {name}
+              {categoryName}
             </Text>
             <Grid
               gridTemplateColumns={{

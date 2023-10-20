@@ -1,20 +1,12 @@
+import { useAppData } from "@/hooks/useAppData";
 import { useCenter } from "@/hooks/useCenter";
-import { Box, Flex, HStack, Icon, Link, Text } from "@chakra-ui/react";
+import { Box, HStack, Icon, Link, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import { useMemo } from "react";
-import { FaEnvelope, FaGithubAlt, FaLinkedinIn, FaInstagram } from "react-icons/fa6";
+import * as icons from "react-icons/fa6";
 
 export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }) {
   const elementRef = useCenter(onPadUpdate);
-
-  const socials = useMemo(
-    () => [
-      { icon: FaLinkedinIn, link: "https://www.linkedin.com/in/hossein-sadeghiam/" },
-      { icon: FaGithubAlt, link: "https://github.com/Hossein-s" },
-      { icon: FaInstagram, link: "https://www.instagram.com/hossein.sadeghiam/" },
-    ],
-    []
-  );
+  const { socials } = useAppData();
 
   return (
     <Box
@@ -42,12 +34,13 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
       />
 
       <HStack justifyContent="center" gap={5} marginTop={5}>
-        {socials.map((social, idx) => (
+        {socials.map(({ url, icon, name }, idx) => (
           <Link
             key={idx}
+            title={name}
             w={10}
             h={10}
-            href={social.link}
+            href={url}
             target="_blank"
             display="flex"
             borderRadius="11px"
@@ -58,7 +51,7 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
               backgroundColor: "gray.500",
             }}
           >
-            <Icon as={social.icon} color="#1F1F21" width={5} height={5} />
+            <Icon as={icons[icon as keyof typeof icons]} color="#1F1F21" width={5} height={5} />
           </Link>
         ))}
       </HStack>
@@ -74,7 +67,7 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
         alignItems="center"
         href="mailto:mail@hosi.dev"
       >
-        <Icon as={FaEnvelope} color="#1F1F21" />
+        <Icon as={icons.FaEnvelope} color="#1F1F21" />
         <Text fontSize="0.9rem" fontWeight="700" color="#1F1F21">
           Contact Me
         </Text>
