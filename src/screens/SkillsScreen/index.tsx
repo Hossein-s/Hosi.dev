@@ -60,7 +60,7 @@ export function SkillsScreen() {
                       display="flex"
                       alignItems="center"
                     >
-                      {skill.name}
+                      {name}
                     </Text>
                   </VStack>
                 </GridItem>
