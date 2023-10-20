@@ -2,13 +2,13 @@ name: Hossein Sadeghi
 description: I'm a skilled Full Stack Engineer with 7+ years of experience. I always like to bring new technologies and knowledge into work for solving problems.
 socials:
   - name: LinkedIn
-    icon: FaLinkedinIn
+    icon: /icons/socials/LinkedIn.svg
     url: https://www.linkedin.com/in/hossein-sadeghiam/
   - name: GitHub
-    icon: FaGithubAlt
+    icon: /icons/socials/GitHub.svg
     url: https://github.com/Hossein-s
   - name: Medium
-    icon: FaMedium
+    icon: /icons/socials/Medium.svg
     url: https://medium.com/@hossein-sadeghi
 experiences:
   - position: SOFTWARE ENGINEER
@@ -47,58 +47,58 @@ skills:
   - categoryName: Languages
     items:
       - name: Kotlin
-        image: /icons/Kotlin.svg
+        image: /icons/skills/Kotlin.svg
       - name: TypeScript
-        image: /icons/TypeScript.svg
+        image: /icons/skills/TypeScript.svg
       - name: JavaScript
-        image: /icons/JavaScript.svg
+        image: /icons/skills/JavaScript.svg
       - name: PHP
-        image: /icons/PHP.svg
+        image: /icons/skills/PHP.svg
   - categoryName: Frameworks & Libraries
     items:
       - name: Spring Boot
-        image: /icons/Spring Boot.svg
+        image: /icons/skills/Spring Boot.svg
       - name: NestJS
-        image: /icons/NestJS.svg
+        image: /icons/skills/NestJS.svg
       - name: Symfony
-        image: /icons/Symfony.svg
+        image: /icons/skills/Symfony.svg
       - name: React
-        image: /icons/React.svg
+        image: /icons/skills/React.svg
       - name: Vue
-        image: /icons/Vue.svg
+        image: /icons/skills/Vue.svg
       - name: Socket.io
-        image: /icons/Socket.io.svg
+        image: /icons/skills/Socket.io.svg
       - name: Fastify
-        image: /icons/Fastify.svg
+        image: /icons/skills/Fastify.svg
       - name: mediasoup
-        image: /icons/mediasoup.svg
+        image: /icons/skills/mediasoup.svg
   - categoryName: Databases
     items:
       - name: PostgreSQL
-        image: /icons/PostgreSQL.svg
+        image: /icons/skills/PostgreSQL.svg
       - name: MySQL
-        image: /icons/MySQL.svg
+        image: /icons/skills/MySQL.svg
       - name: MongoDB
-        image: /icons/MongoDB.svg
+        image: /icons/skills/MongoDB.svg
       - name: Redis
-        image: /icons/Redis.svg
+        image: /icons/skills/Redis.svg
   - categoryName: Tools
     items:
       - name: Git
-        image: /icons/Git.svg
+        image: /icons/skills/Git.svg
       - name: Docker
-        image: /icons/Docker.svg
+        image: /icons/skills/Docker.svg
       - name: Kubernetes
-        image: /icons/Kubernetes.svg
+        image: /icons/skills/Kubernetes.svg
       - name: Skaffold
-        image: /icons/Skaffold.svg
+        image: /icons/skills/Skaffold.svg
       - name: Kafka
-        image: /icons/Kafka.svg
+        image: /icons/skills/Kafka.svg
       - name: RabbitMQ
-        image: /icons/RabbitMQ.svg
+        image: /icons/skills/RabbitMQ.svg
       - name: Centrifugo
-        image: /icons/Centrifugo.svg
+        image: /icons/skills/Centrifugo.svg
       - name: AWS
-        image: /icons/AWS.svg
+        image: /icons/skills/AWS.svg
       - name: Kong
-        image: /icons/Kong.svg
+        image: /icons/skills/Kong.svg
