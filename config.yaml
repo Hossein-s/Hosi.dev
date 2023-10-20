@@ -46,12 +46,32 @@ experiences:
 skills:
   - categoryName: Languages
     items:
+      - name: Kotlin
+        image: /icons/Kotlin.svg
       - name: TypeScript
         image: /icons/TypeScript.svg
       - name: JavaScript
         image: /icons/JavaScript.svg
       - name: PHP
         image: /icons/PHP.svg
+  - categoryName: Frameworks & Libraries
+    items:
+      - name: Spring Boot
+        image: /icons/Spring Boot.svg
+      - name: NestJS
+        image: /icons/NestJS.svg
+      - name: Symfony
+        image: /icons/Symfony.svg
+      - name: React
+        image: /icons/React.svg
+      - name: Vue
+        image: /icons/Vue.svg
+      - name: Socket.io
+        image: /icons/Socket.io.svg
+      - name: Fastify
+        image: /icons/Fastify.svg
+      - name: mediasoup
+        image: /icons/mediasoup.svg
   - categoryName: Databases
     items:
       - name: PostgreSQL
@@ -62,20 +82,6 @@ skills:
         image: /icons/MongoDB.svg
       - name: Redis
         image: /icons/Redis.svg
-  - categoryName: Frameworks & Libraries
-    items:
-      - name: NestJS
-        image: /icons/NestJS.svg
-      - name: mediasoup (WebRTC)
-        image: /icons/mediasoup.svg
-      - name: Symfony
-        image: /icons/Symfony.svg
-      - name: Socket.io
-        image: /icons/Socket.io.svg
-      - name: Express
-        image: /icons/Express.svg
-      - name: Fastify
-        image: /icons/Fastify.svg
   - categoryName: Tools
     items:
       - name: Git
@@ -96,9 +102,3 @@ skills:
         image: /icons/AWS.svg
       - name: Kong
         image: /icons/Kong.svg
-  - categoryName: Frontend
-    items:
-      - name: React
-        image: /icons/React.svg
-      - name: Vue
-        image: /icons/Vue.svg
