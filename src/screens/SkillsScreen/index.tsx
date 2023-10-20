@@ -39,7 +39,7 @@ export function SkillsScreen() {
               gridTemplate={{ base: "repeat(4, 1fr)" }}
               gap="18px"
             >
-              {items.map((skill, idx) => (
+              {items.map(({ name, image }, idx) => (
                 <GridItem key={idx}>
                   <VStack
                     key={idx}
@@ -50,7 +50,7 @@ export function SkillsScreen() {
                     borderRadius="16px"
                   >
                     <Flex w="80px" h="80px" alignItems="center">
-                      <Image src={skill.image} w="80px" h="80px" />
+                      <Image src={image} w="80px" h="80px" alt={name} title={name} />
                     </Flex>
                     <Text
                       fontSize="md"
