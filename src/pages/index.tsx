@@ -44,6 +44,25 @@ export default function Index(props: AppData) {
     }, 400);
   }, []);
 
+  useEffect(() => {
+    // disable transition delay after first screen animations done
+    // to avoid delays for items not visible on first screen when user scrolls
+    setTimeout(() => {
+      const style = document.createElement("style");
+      style.textContent = `@media screen and (max-width: 480px) {
+        [data-aos-delay] {
+          transition-delay: 0s !important;
+        }
+      }`;
+
+      document.head.appendChild(style);
+
+      return () => {
+        style.remove();
+      };
+    }, 1500);
+  });
+
   return (
     <ChakraProvider theme={theme}>
       <AppDataProvider value={props}>
