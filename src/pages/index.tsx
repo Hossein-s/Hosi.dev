@@ -42,29 +42,9 @@ export default function Index(props: AppData) {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      AOS.init();
-    }, 400);
+    setTimeout(AOS.init, 400);
+    setTimeout(() => document.body.classList.add("animations-settled"), 1500);
   }, []);
-
-  useEffect(() => {
-    // disable transition delay after first screen animations done
-    // to avoid delays for items not visible on first screen when user scrolls
-    setTimeout(() => {
-      const style = document.createElement("style");
-      style.textContent = `@media screen and (max-width: 480px) {
-        [data-aos-delay] {
-          transition-delay: 0s !important;
-        }
-      }`;
-
-      document.head.appendChild(style);
-
-      return () => {
-        style.remove();
-      };
-    }, 1500);
-  });
 
   return (
     <ChakraProvider theme={theme}>
