@@ -64,7 +64,7 @@ export function HomeScreen({ pad }: { pad: number }) {
         {description}
       </Text>
 
-      <Box display={{ base: "block", lg: "none" }}>
+      <Box display={{ base: "block", lg: "none" }} data-aos="zoom-out" data-aos-delay="1000">
         <Socials items={socials} />
       </Box>
 
