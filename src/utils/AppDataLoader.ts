@@ -1,9 +1,9 @@
 import { AppData } from "@/types/AppData";
-import { readFileSync } from "fs";
+import { promises as fs } from "fs";
 import yaml from "yaml";
 
-export function loadAppData(): AppData {
-  const configString = readFileSync("config.yaml", "utf-8");
+export async function loadAppData(): Promise<AppData> {
+  const configString = await fs.readFile("config.yaml", "utf-8");
   const rawConfig = yaml.parse(configString);
   return AppData.parse(rawConfig);
 }
