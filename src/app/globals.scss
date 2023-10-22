@@ -1,0 +1,11 @@
+@import "aos/aos.scss";
+
+.page-wrapper {
+  visibility: hidden;
+}
+
+.js {
+  .page-wrapper {
+    visibility: visible;
+  }
+}

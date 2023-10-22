@@ -1,6 +1,6 @@
 "use client";
 
-import "@/app/globals.css";
+import "@/app/globals.scss";
 import { ProfileBox } from "@/components/ProfileBox";
 import { StickyNavbar } from "@/components/StickyNavbar";
 import { AppDataProvider } from "@/hooks/useAppData";
@@ -11,7 +11,6 @@ import { AppData } from "@/types/AppData";
 import { loadAppData } from "@/utils/AppDataLoader";
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import Head from "next/head";
 import Script from "next/script";
 import { useEffect, useState } from "react";
@@ -37,6 +36,10 @@ export const theme = extendTheme({
 
 export default function Index(props: AppData) {
   const [offsetTop, setOffsetTop] = useState<number>(32);
+
+  useEffect(() => {
+    document.body.classList.add("js");
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -69,6 +72,15 @@ export default function Index(props: AppData) {
         <Head>
           <title>Hossein Sadeghi&apos;s Personal Page</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <noscript>
+            <style>
+              {`
+                .page-wrapper {
+                  visibility: visible !important;
+                }
+              `}
+            </style>
+          </noscript>
         </Head>
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0XMT1C0GLB" />
         <Script id="google-analytics">
@@ -87,6 +99,7 @@ export default function Index(props: AppData) {
           pb="12"
           position="relative"
           overflow="hidden"
+          className="page-wrapper"
         >
           <ProfileBox onPadUpdate={(p) => setOffsetTop(p)} />
 
