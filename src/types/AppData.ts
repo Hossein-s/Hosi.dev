@@ -2,6 +2,7 @@ import z from "zod";
 
 export const AppData = z.object({
   name: z.string(),
+  title: z.string(),
   description: z.string(),
   socials: z.array(
     z.object({

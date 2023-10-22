@@ -50,7 +50,7 @@ export default function Index(props: AppData) {
     <ChakraProvider theme={theme}>
       <AppDataProvider value={props}>
         <Head>
-          <title>Hossein Sadeghi&apos;s Personal Page</title>
+          <title>{`${props.name} — ${props.title}`}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <noscript>
             <style>
