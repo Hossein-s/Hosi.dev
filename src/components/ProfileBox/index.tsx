@@ -1,8 +1,7 @@
 import { useAppData } from "@/hooks/useAppData";
 import { useCenter } from "@/hooks/useCenter";
-import { Box, HStack, Icon, Link, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import * as icons from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa6";
 import { Socials } from "../Socials";
 
 export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }) {
@@ -10,48 +9,31 @@ export function ProfileBox({ onPadUpdate }: { onPadUpdate: (p: number) => void }
   const { socials } = useAppData();
 
   return (
-    <Box
+    <aside
       ref={elementRef as any}
-      display={{ base: "none", lg: "block" }}
-      position="absolute"
-      borderWidth={1}
-      borderColor="stroke"
-      borderRadius="16px"
-      px={3}
-      py={5}
+      className="absolute hidden lg:block border border-granite-gray rounded-xl px-3 py-5"
       data-aos="fade-right"
       data-aos-delay="500"
     >
-      <Text fontSize="xl" fontWeight="700" color="#fff" align="center" marginBottom="1rem">
-        Hossein Sadeghi
-      </Text>
+      <p className="text-xl text-center text-white font-bold mb-4">Hossein Sadeghi</p>
 
       <Image
+        className="rounded-2xl"
         src="/images/avatar.jpg"
         width={230}
         height={230}
         alt="Hossein Sadeghi"
-        style={{ borderRadius: "16px" }}
       />
 
       <Socials items={socials} />
 
-      <Link
-        display="flex"
-        gap="10px"
-        marginTop="15px"
-        justifyContent="center"
-        padding="10px"
-        background="bg.yellow"
-        borderRadius="12px"
-        alignItems="center"
+      <a
+        className="flex justify-center items-center gap-2 bg-icterine p-2.5 mt-4 rounded-xl"
         href="mailto:mail@hosi.dev"
       >
-        <Icon as={icons.FaEnvelope} color="#1F1F21" />
-        <Text fontSize="0.9rem" fontWeight="700" color="#1F1F21">
-          Contact Me
-        </Text>
-      </Link>
-    </Box>
+        <FaEnvelope className="text-raisin-black" />
+        <p className="text-sm font-bold text-raisin-black">Contact Me</p>
+      </a>
+    </aside>
   );
 }

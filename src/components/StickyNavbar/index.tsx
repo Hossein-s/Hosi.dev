@@ -1,8 +1,6 @@
 import { useSticky } from "@/hooks/useSticky";
-import { Link, VStack } from "@chakra-ui/react";
-import { gsap } from "gsap";
-import { Briefcase, Home2, MainComponent, PictureFrame, Sms } from "iconsax-react";
-import React, { MouseEvent, useCallback, useMemo } from "react";
+import { Briefcase, Home2, MainComponent } from "iconsax-react";
+import React, { MouseEvent, useMemo } from "react";
 
 export function StickyNavbar() {
   const menus = useMemo(
@@ -25,29 +23,24 @@ export function StickyNavbar() {
   const elementRef = useSticky();
 
   return (
-    <VStack
+    <div
       ref={elementRef as any}
-      position="absolute"
-      right="10px"
-      display={{ base: "none", lg: "inline-flex" }}
-      padding="1.1rem 0.8rem"
-      spacing={15}
-      border="1px solid #666"
-      borderRadius={14}
+      className={`flex-col absolute right-2.5 hidden
+                  lg:inline-flex border border-granite-gray rounded-xl
+                  py-5 px-3 gap-4`}
       data-aos="fade-left"
       data-aos-delay="500"
     >
       {menus.map((menu, idx) => (
-        <Link
+        <a
           key={idx}
           href={menu.anchor}
-          color="#666666"
-          _hover={{ color: "#fff" }}
           onClick={onClickHandler}
+          className="text-granite-gray hover:text-white transition-all"
         >
           {React.createElement(menu.icon, { size: 20 })}
-        </Link>
+        </a>
       ))}
-    </VStack>
+    </div>
   );
 }

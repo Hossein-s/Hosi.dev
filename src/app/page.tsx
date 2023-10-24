@@ -1,18 +1,18 @@
-import "@/app/globals.scss";
 import { IndexScreen } from "@/screens/IndexScreen";
+import "@/styles/globals.scss";
 import { loadAppData } from "@/utils/AppDataLoader";
-import Head from "next/head";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await loadAppData();
+
+  return {
+    title: `${data.name} — ${data.title}`,
+  };
+}
 
 export default async function Index() {
   const data = await loadAppData();
 
-  return (
-    <>
-      <Head>
-        <title>{`${data.name} — ${data.title}`}</title>
-      </Head>
-
-      <IndexScreen data={data} />
-    </>
-  );
+  return <IndexScreen data={data} />;
 }

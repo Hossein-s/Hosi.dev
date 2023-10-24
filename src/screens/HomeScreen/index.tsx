@@ -1,50 +1,30 @@
-import { ScreenContainer } from "@/components/ScreenContainer";
 import { SectionTitle } from "@/components/SectionTitle";
 import { Socials } from "@/components/Socials";
 import { useAppData } from "@/hooks/useAppData";
-import { Box, Flex, HStack, Text, VStack } from "@chakra-ui/react";
 import { Home2 } from "iconsax-react";
 import Image from "next/image";
+import { StatTile } from "./components/StatTile";
 
 export function HomeScreen({ pad }: { pad: number }) {
   const { description, socials } = useAppData();
 
   return (
-    <ScreenContainer h={{ base: "auto", lg: "100vh" }} pt={`${pad}px`} mb={12} id="home">
+    <section id="home" style={{ paddingTop: `${pad}px` }} className="lg:h-screen mb-12">
       <SectionTitle title="INTRODUCE" Icon={Home2} />
 
-      <VStack alignItems="flex-start" paddingTop="20px" gap={0}>
-        <Text
-          fontSize={{ base: "3xl", lg: "5xl" }}
-          color="#FFF"
-          lineHeight={1.2}
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          Hello, I am{" "}
-          <Text as="span" color="#EEFC57" fontWeight="bold">
-            Hossein
-          </Text>
-          ,
-        </Text>
-        <Text
-          fontSize={{ base: "3xl", lg: "5xl" }}
-          color="#FFF"
-          lineHeight={1.2}
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          a Software Engineer
-        </Text>
-      </VStack>
-
-      <Flex
-        display={{ base: "flex", lg: "none" }}
-        justifyContent="center"
-        mt={6}
-        data-aos="zoom-out"
-        data-aos-delay="500"
+      <div
+        className={`flex flex-col items-start pt-5 text-3xl lg:text-5xl
+                    text-white leading-tight lg:leading-tight`}
       >
+        <p data-aos="fade-up" data-aos-delay="200">
+          Hello, I am <span className="font-bold text-icterine">Hossein</span>,
+        </p>
+        <p data-aos="fade-up" data-aos-delay="400">
+          a Software Engineer
+        </p>
+      </div>
+
+      <div className="flex lg:hidden justify-center mt-6" data-aos="zoom-out" data-aos-delay="500">
         <Image
           src="/images/avatar.jpg"
           width={200}
@@ -52,46 +32,20 @@ export function HomeScreen({ pad }: { pad: number }) {
           alt="Hossein Sadeghi"
           style={{ borderRadius: "16px" }}
         />
-      </Flex>
+      </div>
 
-      <Text
-        fontSize="0.9rem"
-        marginTop="30px"
-        color="#999999"
-        data-aos="zoom-out"
-        data-aos-delay="800"
-      >
+      <p className="text-sm mt-8 text-spanish-gray" data-aos="zoom-out" data-aos-delay="800">
         {description}
-      </Text>
+      </p>
 
-      <Box display={{ base: "block", lg: "none" }} data-aos="zoom-out" data-aos-delay="1000">
+      <div className="lg:hidden" data-aos="zoom-out" data-aos-delay="1000">
         <Socials items={socials} />
-      </Box>
+      </div>
 
-      <HStack
-        justifyContent="space-around"
-        marginTop={10}
-        data-aos="zoom-out"
-        data-aos-delay="1000"
-      >
-        <VStack maxW="74px">
-          <Text fontSize={{ base: "5xl", lg: "6xl" }} color="#EEFC57">
-            7+
-          </Text>
-          <Text fontSize={{ base: "sm", lg: "md" }} color="#999" align="center">
-            YEARS OF EXPRIENCE
-          </Text>
-        </VStack>
-
-        <VStack maxW="74px">
-          <Text fontSize={{ base: "5xl", lg: "6xl" }} color="#EEFC57">
-            5+
-          </Text>
-          <Text fontSize={{ base: "sm", lg: "md" }} color="#999" align="center">
-            PROJECTS COMPLETED
-          </Text>
-        </VStack>
-      </HStack>
-    </ScreenContainer>
+      <div className="flex justify-around mt-10" data-aos="zoom-out" data-aos-delay="1000">
+        <StatTile number="7+" description="YEARS OF EXPRIENCE" />
+        <StatTile number="5+" description="PROJECTS COMPLETED" />
+      </div>
+    </section>
   );
 }

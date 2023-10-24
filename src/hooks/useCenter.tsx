@@ -26,7 +26,7 @@ export function useCenter(
     return () => {
       window.removeEventListener("resize", updateTop);
     };
-  }, []);
+  });
 
   return elementRef;
 }

@@ -1,74 +1,47 @@
-import { ScreenContainer } from "@/components/ScreenContainer";
 import { SectionTitle } from "@/components/SectionTitle";
 import { useAppData } from "@/hooks/useAppData";
-import { Box, Flex, Grid, GridItem, Image, Text, VStack } from "@chakra-ui/react";
 import { MainComponent } from "iconsax-react";
+import Image from "next/image";
 
 export function SkillsScreen() {
   const { skills } = useAppData();
 
   return (
-    <ScreenContainer id="skills">
+    <section id="skills">
       <SectionTitle title="DIGITAL SKILLS" Icon={MainComponent} />
 
-      <Text
-        fontSize={{ base: "3xl", lg: "4xl" }}
-        color="text.primary"
-        mt={7}
-        mb={7}
-        data-aos="fade-left"
-      >
-        Digital{" "}
-        <Text as="span" color="text.accent">
-          Skills
-        </Text>
-      </Text>
+      <div className="text-3xl lg:text-4xl text-white my-7" data-aos="fade-left">
+        Digital <span className="text-icterine">Skills</span>
+      </div>
 
-      <Box>
+      <div>
         {skills.map(({ categoryName, items }, idx) => (
-          <Box key={idx} data-aos="zoom-out">
-            <Text fontSize="xl" mb="20px" mt="40px" color="text.accent">
-              {categoryName}
-            </Text>
-            <Grid
-              gridTemplateColumns={{
-                base: "repeat(2, 1fr)",
-                sm: "repeat(3, 1fr)",
-                md: "repeat(4, 1fr)",
-              }}
-              gridTemplate={{ base: "repeat(4, 1fr)" }}
-              gap="18px"
-            >
+          <div key={idx} data-aos="zoom-out">
+            <h6 className="text-xl text-icterine mb-5 mt-10">{categoryName}</h6>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {items.map(({ name, image }, idx) => (
-                <GridItem key={idx}>
-                  <VStack
-                    key={idx}
-                    height="100%"
-                    p="20px"
-                    border="1px solid"
-                    borderColor="stroke"
-                    borderRadius="16px"
-                  >
-                    <Flex w="80px" h="80px" alignItems="center">
-                      <Image src={image} w="80px" h="80px" alt={name} title={name} />
-                    </Flex>
-                    <Text
-                      fontSize="md"
-                      align="center"
-                      mt="25px"
-                      flexGrow="1"
-                      display="flex"
-                      alignItems="center"
-                    >
-                      {name}
-                    </Text>
-                  </VStack>
-                </GridItem>
+                <div
+                  key={idx}
+                  className={`flex flex-col items-center gap-2
+                              h-full p-5 border border-granite-gray rounded-2xl`}
+                >
+                  <div className="flex items-center w-20 h-20">
+                    <Image
+                      src={image}
+                      width={80}
+                      height={80}
+                      alt={name}
+                      title={name}
+                      className="max-w-20 max-h-20"
+                    />
+                  </div>
+                  <p className="flex flex-grow text-base text-white text-center mt-6">{name}</p>
+                </div>
               ))}
-            </Grid>
-          </Box>
+            </div>
+          </div>
         ))}
-      </Box>
-    </ScreenContainer>
+      </div>
+    </section>
   );
 }

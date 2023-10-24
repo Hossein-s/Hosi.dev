@@ -1,5 +1,8 @@
+import "@/styles/global.css";
+import { Noto_Sans } from "next/font/google";
 import Script from "next/script";
-import { ChakraProviders } from "./chakra";
+
+const font = Noto_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -14,6 +17,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </style>
         </noscript>
       </head>
+      {/* add js class to enable AOS hiding styles only when javascript enabled */}
+      <Script>{`document.body.classList.add("js");`}</Script>
+
+      {/* Google Analytics */}
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0XMT1C0GLB"></Script>
       <Script id="google-analytics">
         {`
@@ -24,9 +31,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('config', 'G-0XMT1C0GLB');
         `}
       </Script>
-      <body>
-        <ChakraProviders>{children}</ChakraProviders>
-      </body>
+
+      <body className={`${font.className} bg-raisin-black`}>{children}</body>
     </html>
   );
 }
