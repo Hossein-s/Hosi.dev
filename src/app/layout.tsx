@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       {/* add js class to enable AOS hiding styles only when javascript enabled */}
-      <Script>{`document.body.classList.add("js");`}</Script>
+      <Script id="js-class">{`document.body.classList.add("js");`}</Script>
 
       {/* Google Analytics */}
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0XMT1C0GLB"></Script>
