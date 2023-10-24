@@ -1,5 +1,3 @@
-import { Box, Text } from "@chakra-ui/react";
-
 export interface TimelineItemProps {
   period: string;
   position: string;
@@ -9,34 +7,15 @@ export interface TimelineItemProps {
 
 export function TimelineItem({ period, position, company, current }: TimelineItemProps) {
   return (
-    <Box
-      borderLeftWidth={2}
-      borderLeftColor="text.secondary"
-      position="relative"
-      pb={10}
-      pl={9}
-      _before={{
-        content: "''",
-        position: "absolute",
-        left: "-10px",
-        top: 0,
-        bg: current ? "text.accent" : "text.secondary",
-        w: 5,
-        h: 5,
-        borderRadius: 10,
-      }}
+    <div
+      className={`relative border-l-2 border-granite-gray pb-10 pl-9
+                  before:w-5 before:h-5 before:rounded-xl before:absolute
+                  before:-left-2.5 before:top-0
+                  ${current ? "before:bg-icterine" : "before:bg-granite-gray"}`}
     >
-      <Text fontSize="sm" color={current ? "text.accent" : "text.secondary"}>
-        {period}
-      </Text>
-
-      <Text fontSize="md" color="text.primary" mt={6}>
-        {position}
-      </Text>
-
-      <Text fontSize="sm" color="text.secondary" mt={2}>
-        {company}
-      </Text>
-    </Box>
+      <p className={`text-sm ${current ? "text-icterine" : "text-spanish-gray"}`}>{period}</p>
+      <p className="text-base text-white mt-6">{position}</p>
+      <p className="text-sm text-spanish-gray mt-2">{company}</p>
+    </div>
   );
 }
