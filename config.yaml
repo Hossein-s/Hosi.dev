@@ -12,9 +12,12 @@ socials:
     icon: /icons/socials/Medium.svg
     url: https://medium.com/@hossein-sadeghi
 experiences:
+  - position: SENIOR SOFTWARE ENGINEER
+    company: GetYourGuide
+    period: MAR 2024 - CURRENT
   - position: SOFTWARE ENGINEER
     company: CHARGEPOINT
-    period: AUG 2022 - CURRENT
+    period: AUG 2022 - FEB 2024
     current: true
   - position: FREELANCE FULL-STACK ENGINEER
     company: Biztree
